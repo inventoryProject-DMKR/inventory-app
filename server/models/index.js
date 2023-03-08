@@ -1,11 +1,10 @@
-const { Sequelize } = require('sequelize')
-const { sequelize } = require('../db')
+const { Sequelize } = require("sequelize");
+const { sequelize } = require("../db");
 
 //Removes sausces
 //Sauce - changed to Item
 //sauces changed to items
 //sauce changed to item
-
 
 const Item = sequelize.define("items", {
   // name: Sequelize.STRING,
@@ -13,27 +12,27 @@ const Item = sequelize.define("items", {
   //Name, Description, Price, Category, Image - from readme
   name: {
     type: Sequelize.STRING,
-    allowNull: false  //means in cant be null
+    allowNull: false, //means in cant be null
   },
   Description: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
   },
   Price: {
     type: Sequelize.NUMBER,
-    allowNull: false
+    allowNull: false,
   },
   Category: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: false,
   },
   Image: {
     type: Sequelize.STRING,
-    allowNull: false
-  }
+    allowNull: false,
+  },
 });
 
-// poss need more in here please look at wikiVerse example 
+// poss need more in here please look at wikiVerse example
 
 module.exports = {
   db: sequelize,
