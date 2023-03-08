@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { Item } = require("../models");
 
-// GET all items
+// GET all items *WORKS!*
 router.get("/", async (req, res, next) => {
   try {
     const items = await Item.findAll();
@@ -12,7 +12,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-// GET item by id
+// GET item by id *WORKS!*
 router.get("/:id", async (req, res, next) => {
   try {
     const item = await Item.findByPk(req.params.id);
@@ -26,10 +26,15 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-// //create a new item - needs completed
-// router.post("/", async (req, res) => {
-//   res.send("Successful POST Request made!");
-// });
+// CREATE a new item
+router.post("/", async (req, res, next) => {
+  try {
+    const newItem = await Item.create(req.body);
+    res.status(201).send(newItem);
+  } catch (error) {
+    next(error);
+  }
+});
 
 // // put orupdate a an item - needs completed
 // router.put("/", async (req, res) => {
