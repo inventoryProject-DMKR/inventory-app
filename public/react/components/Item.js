@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import apiURL from '../api';
+
 
 export const Item = (props) => {
 
+
+
+  //rendering the item's details in a component
+  async function fetchRequest () {
+    try {
+      const res = await fetch(apiURL + "/item/" + props.item.id);
+      const data = await res.json();
+      props.setIndividualItem(data);
+      console.log(props.item)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return <>
-    <h3>{props.item.title}</h3>
-    <h3>£{props.item.price}</h3>
-    <h3>{props.item.description}</h3>
-    <h3>{props.item.category}</h3>
-    <img src={props.item.image} alt={props.item.title} />
+    <h3 onClick = {fetchRequest}>{props.item.title}</h3>
+
   </>
 } 
