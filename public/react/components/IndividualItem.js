@@ -7,8 +7,8 @@ export function IndividualItem (props) {
         <h4> Price: £{props.item.price}</h4>
         <h4>Item Description: {props.item.description}</h4>
         <h4>Item Category: {props.item.category}</h4>
-        <img src={props.item.image} alt={props.item.title} />
-        <button onClick={() => props.setIndividualItem()}>Back to Wiki List</button>
+        <img id="image" src={props.item.image} alt={props.item.title} />
+        <button id="button" onClick={() => props.setIndividualItem()}>Back to Wiki List</button>
       </>
     );
   }
