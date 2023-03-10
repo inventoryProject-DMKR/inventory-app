@@ -33,3 +33,9 @@ background-color: gray;
 border-radius: 3px;
 box-shadow: 1px, 1px, 1px, skyblue; 
 }
+
+button {
+   background-color: skyblue; 
+  color: gray;
+  
+}
