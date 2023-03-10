@@ -25,7 +25,7 @@ h1{
 }
 
 
-h4, h3 {
+#items {
   
   display: flex;
   flex-direction: column;
